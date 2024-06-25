@@ -1,0 +1,37 @@
+  <div class="form-group row">
+                                                    <label class="control-label col-md-3">Change Way</label>
+                                                    <div class="col-md-8">
+                                                        <input type="checkbox" id="toggleCheckbox" onclick="toggleFields()">
+                                                    </div>
+                                                </div>
+
+                                                <div id="firstField" class="form-group row">
+                                                    <label class="control-label col-md-3">Paid Amount</label>
+                                                    <div class="col-md-8 pull-right" style="margin-right: 60px">
+                                                        <input type="text" onkeypress="return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)" name="amount" class="form-control given-amount" autocomplete="off" style="font-size: 17px">
+                                                    </div>
+                                                </div>
+
+                                                <div id="secondField" class="form-group row" style="display: none;">
+                                                    <label class="control-label col-md-3">Advanced Back</label>
+                                                    <div class="col-md-8 pull-right" style="margin-right: 60px">
+                                                        <input type="text" name="advancedAmount" class="form-control given-amount" autocomplete="off" style="font-size: 17px">
+                                                    </div>
+                                                </div>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+  function toggleFields() {
+            var checkBox = document.getElementById("toggleCheckbox");
+            var firstField = document.getElementById("firstField");
+            var secondField = document.getElementById("secondField");
+
+            if (checkBox.checked) {
+                firstField.style.display = "none";
+                secondField.style.display = "block";
+            } else {
+                firstField.style.display = "block";
+                secondField.style.display = "none";
+            }
+        }
